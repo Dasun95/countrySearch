@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>World countries data</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <section class="section">
+            <h1 class="title is-1">WORLD COUNTRIES LIST</h1>
+            <h2 class="title is-2">Total number of countries : <span id="numberOfCountries"></span></h2>
+        </section>
+
+        <section class="section">
+
+            <button class="button is-link" id="starting">STARTING WORD</button>
+
+            <button class="button is-link" id="anyWord">SEARCH WITH ANY WORD</button>
+
+            <button class="button is-link" id="sort"><i class="fa fa-sort-alpha-asc"></i></button>
+
+        </section>
+
+        <section style="margin: auto; display: flex; justify-content: center;">
+            <input style="width: 50%; margin-bottom: 3%;" class="input is-rounded" type="text"
+                placeholder="Search country...">
+            <div><i class="fa fa-search" style="margin-left: 50%; font-size:250%;color:rgb(46, 37, 37)"></i></div>
+        </section>
+
+    </div>
+
+    <div class="container">
+
+    </div>
+
+
+    <script type="module" src="/script.js"></script>
+
+</body>
+
+</html>
