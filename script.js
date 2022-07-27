@@ -5,11 +5,11 @@ document.querySelector('#numberOfCountries').textContent = countries_data.length
 const cNames = []
 
 for (const item of countries_data) {
-    cNames.push(item.name)
+    cNames.push([item.name, item.flag])
 }
 
 cNames.sort((a, b) => {
-    return b-a
+    return b[0]-a[0]
 })
 
 const buttonStarting = document.querySelector('#starting')
@@ -21,13 +21,18 @@ const input = document.querySelector('.input')
 
 const printList = () => {
     container.innerHTML = ''
+    console.log('filteredList :', filteredList);
     for (const country of filteredList) {
         let itemZ = document.createElement('div')
-        itemZ.style.backgroundImage = 'url(/images/map_image.jpg)'
+        itemZ.setAttribute(
+            "style",
+            "background-image: url(" + country[1] + ")"
+        )
+        itemZ.style.backgroundSize = 'cover'
         itemZ.style.width = '10vw'
         itemZ.style.height = '10vh'
         itemZ.style.margin = '5px'
-        itemZ.textContent = country
+        itemZ.textContent = country[0]
         container.appendChild(itemZ)
     }
 }
@@ -36,7 +41,7 @@ const printList = () => {
 
 const loop = () => {
     input.addEventListener('input', e => {
-        
+
         let char
 
         if (buttonStartingClicked) {
@@ -50,7 +55,7 @@ const loop = () => {
         filteredList = []
 
         for (const country of cNames) {
-            if (regEx.test(country)) {
+            if (regEx.test(country[0])) {
                 filteredList.push(country)
             }
         }
